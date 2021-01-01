@@ -18,8 +18,8 @@ mongoose.connect(MONGODB_URI, {
   useFindAndModify: false
 })
 
-app.use(require("./routes/api.js"));
-app.use("/", require("./routes/html.js"));
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app)
 
 
 app.listen(PORT, () => {
